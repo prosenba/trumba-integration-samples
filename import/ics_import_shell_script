@@ -1,0 +1,11 @@
+# If your events can be exported from the external calendar system into
+# an iCal (.ics) file, you may use a command-line script like this to import
+# them into Trumba via curl:
+
+
+curl --silent http://localhost/tools/events/$TRUMBA_CALNAME.ics | \
+ curl --silent --user "$TRUMBA_USERNAME:$TRUMBA_PASSWORD" --upload-file - "https://www.trumba.com/service/$TRUMBA_CALNAME.ics" \
+  > /dev/null
+
+# Author: Bradley Bell
+# UW Information Technology, Classroom Technology
